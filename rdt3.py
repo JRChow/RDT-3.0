@@ -358,8 +358,8 @@ def rdt_send(sockd, byte_msg):
                 print("Socket send error: ", err_msg)
                 return -1
             (_), payload = __unpack_helper(snd_pkt)
-            print("rdt_send(): Re-sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(payload))
-
+            # print("rdt_send(): Re-sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(payload))
+            print("rdt_send(): Re-sent one message [%d] of size %d " % (__send_seq_num, sent_len))
 
 def __make_ack(seq_num):
     """Make ACK [seq_num].
@@ -435,7 +435,8 @@ def rdt_recv(sockd, length):
         # If received DATA with expected seq num, send ACK
         elif __has_seq(recv_pkt, __recv_seq_num):
             (_), payload = __unpack_helper(recv_pkt)  # Extract payload
-            print(("rdt_recv(): Received expected DATA [%d] -> " % __recv_seq_num) + str(payload))
+            # print(("rdt_recv(): Received expected DATA [%d] -> " % __recv_seq_num) + str(payload))
+            print(("rdt_recv(): Received expected DATA [%d]" % __recv_seq_num))
             # Send right ACK
             snd_ack = __make_ack(__recv_seq_num)
             __udt_send(sockd, __peeraddr, snd_ack)
