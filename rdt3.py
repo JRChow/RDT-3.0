@@ -25,6 +25,7 @@ TWAIT = 10 * TIMEOUT  # TimeWait duration
 TYPE_DATA = 12  # 12 means data
 TYPE_ACK = 11  # 11 means ACK
 MSG_FORMAT = 'B?HH'  # Format string for header structure
+HEADER_SIZE = 6  # 6 bytes
 
 # store peer address info
 __peeraddr = ()  # set by rdt_peer()
@@ -290,7 +291,7 @@ def rdt_send(sockd, byte_msg):
     length. Catch any known error and report to the user.
     """
     # Your implementation
-    global PAYLOAD, __peeraddr, __data_buffer
+    global PAYLOAD, __peeraddr, __data_buffer, HEADER_SIZE
 
     # Packet number
     __send_seq_num = 0
@@ -323,7 +324,7 @@ def rdt_send(sockd, byte_msg):
             for sock in r:
                 # Try to receive ACK (or DATA)
                 try:
-                    recv_msg = __udt_recv(sock, PAYLOAD)  # FIXME: length?
+                    recv_msg = __udt_recv(sock, PAYLOAD + HEADER_SIZE)
                 except socket.error as err_msg:
                     print("__udt_recv error: ", err_msg)
                     return -1
