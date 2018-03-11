@@ -6,8 +6,8 @@ functions: rdt_network_init(), rdt_socket(), rdt_bind(), rdt_peer()
 
 Student name: ZHOU Jingran
 Student No. : 3035232468
-Date and version: 10 Mar - Version 1
-Development platform: macOS High Sierra (Version 10.13.3)
+Date and version: 11 Mar - Version 2
+Development platform: Developed on macOS High Sierra (Version 10.13.3); Tested on Ubuntu 16.04 LTS
 Python version: Python 3.6.3
 """
 
@@ -335,26 +335,24 @@ def rdt_send(sockd, byte_msg):
 
                 # If corrupted or undesired ACK, keep waiting
                 if __is_corrupt(recv_msg) or __is_ack(recv_msg, 1 - __send_seq_num):
-                    print("rdt_send(): Recv msg [corrupted] OR is wrong [ACK %d]... Keep waiting for ACK [%d]..."
+                    print("rdt_send(): recv [corrupt] OR unexpected [ACK %d] | Keep waiting for ACK [%d]"
                           % (1-__send_seq_num, __send_seq_num))
-                    print("rdt_send() msg is this -> " + str(__unpack_helper(recv_msg)[0]))
                 # Happily received expected ACK
                 elif __is_ack(recv_msg, __send_seq_num):
-                    print("rdt_send(): Received expected ACK [%d]" % __send_seq_num)
+                    print("rdt_send(): Received expected ACK [%d]!" % __send_seq_num)
                     __send_seq_num ^= 1  # Flip sequence number
-                    return sent_len - HEADER_SIZE  # Return size of data sent
-                # Received intact DATA while waiting for ACK
+                    return sent_len - HEADER_SIZE  # Return size of data sent (payload only)
+                # Received complete DATA while waiting for ACK
                 else:  # TODO: find right logic!
-                    # Assume ACK has been received (otherwise it cannot send DATA)
-                    print("rdt_send(): Received DATA?!  -> " + str(__unpack_helper(recv_msg)[0])
-                          + "... Assume received expected ACK [%d]" % __send_seq_num)
+                    # Assume ACK has been received
+                    print("rdt_send(): recv DATA ?! -buffer-> " + str(__unpack_helper(recv_msg)[0])
+                          + " | assume received expected ACK [%d]" % __send_seq_num)
                     __send_seq_num ^= 1  # Flip sequence number
-                    __data_buffer.append(recv_msg) # Buffer data...
+                    __data_buffer.append(recv_msg)  # Buffer data...
                     # Assume successfully sent, return
-                    return sent_len - HEADER_SIZE
-
+                    return sent_len - HEADER_SIZE  # Return size of data sent (payload only)
         else:  # Timeout
-            print("Timeout!")
+            print("! TIMEOUT !")
             # Re-transmit packet
             try:
                 sent_len = __udt_send(sockd, __peeraddr, snd_pkt)
@@ -363,7 +361,8 @@ def rdt_send(sockd, byte_msg):
                 return -1
             (_), payload = __unpack_helper(snd_pkt)
             # print("rdt_send(): Re-sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(payload))
-            print("rdt_send(): Re-sent one message [%d] of size %d " % (__send_seq_num, sent_len))
+            print("rdt_send(): Re-sent one message [%d] of size %d -> " % (__send_seq_num, sent_len)
+                  + str(__unpack_helper(snd_pkt)[0]))
 
 
 def __make_ack(seq_num):
@@ -409,15 +408,16 @@ def rdt_recv(sockd, length):
 
     Note: Catch any known error and report to the user.
     """
-    # Your implementation
     global __peeraddr, __data_buffer, __recv_seq_num, HEADER_SIZE
 
     recv_expected_data = False
     while not recv_expected_data:  # Repeat until received expected DATA
-        # Receive packet
+        # Try to receive packet...
+        # Check if something in buffer
         if len(__data_buffer) > 0:
             recv_pkt = __data_buffer.pop(0)
             print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)[0]))
+        # If buffer empty, check socket
         else:
             try:
                 recv_pkt = __udt_recv(sockd, length + HEADER_SIZE)
@@ -428,13 +428,12 @@ def rdt_recv(sockd, length):
         # If packet is corrupt or has wrong seq num, send old ACK
         if __is_corrupt(recv_pkt) or __has_seq(recv_pkt, 1-__recv_seq_num):
             print("rdt_recv(): Received [corrupted] or [wrong seq_num (%d)] -> " % (1-__recv_seq_num)
-                  + str(__unpack_helper(recv_pkt)[0]))
-            print("-- is corrupt ? => " + str(__is_corrupt(recv_pkt)))
-            print("rdt_recv(): Keep expecting seq [%d]" % __recv_seq_num)
+                  + str(__unpack_helper(recv_pkt)[0]) + "Keep expecting seq [%d]" % __recv_seq_num)
+            print("----corrupt? => " + str(__is_corrupt(recv_pkt)))
             # Send old ACK
             snd_ack = __make_ack(1-__recv_seq_num)
             __udt_send(sockd, __peeraddr, snd_ack)
-            print("rdt_recv(): Sent ACK [%d]" % (1-__recv_seq_num))
+            print("rdt_recv(): Sent old ACK [%d]" % (1-__recv_seq_num))
         # If received DATA with expected seq num, send ACK
         elif __has_seq(recv_pkt, __recv_seq_num):
             (_), payload = __unpack_helper(recv_pkt)  # Extract payload
@@ -443,7 +442,7 @@ def rdt_recv(sockd, length):
             # Send right ACK
             snd_ack = __make_ack(__recv_seq_num)
             __udt_send(sockd, __peeraddr, snd_ack)
-            print("rdt_recv(): Sent ACK [%d]" % __recv_seq_num)
+            print("rdt_recv(): Sent expected ACK [%d]" % __recv_seq_num)
             __recv_seq_num ^= 1  # Flip seq num
             return payload
 
@@ -457,7 +456,6 @@ def rdt_close(sockd):
     (2) Before closing the RDT socket, the reliable layer needs to wait for TWAIT
     time units before closing the socket.
     """
-    # Your implementation
     # TODO: Add logic
     try:
         sockd.close()

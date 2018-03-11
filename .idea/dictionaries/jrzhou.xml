@@ -4,12 +4,14 @@
       <w>addr</w>
       <w>chksum</w>
       <w>cport</w>
+      <w>jingran</w>
       <w>peeraddr</w>
       <w>recv</w>
       <w>rmsg</w>
       <w>sockd</w>
       <w>struct</w>
       <w>twait</w>
+      <w>zhou</w>
     </words>
   </dictionary>
 </component>
