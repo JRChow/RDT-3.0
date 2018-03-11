@@ -37,6 +37,10 @@ __ERR_RATE = 0.0
 # Data buffer
 __data_buffer = []
 
+# Packet sequence number
+__send_seq_num = 0
+__recv_seq_num = 0
+
 
 # internal functions - being called within the module
 def __udt_send(sockd, peer_addr, byte_msg):
@@ -291,10 +295,7 @@ def rdt_send(sockd, byte_msg):
     length. Catch any known error and report to the user.
     """
     # Your implementation
-    global PAYLOAD, __peeraddr, __data_buffer, HEADER_SIZE
-
-    # Packet number
-    __send_seq_num = 0
+    global PAYLOAD, __peeraddr, __data_buffer, HEADER_SIZE, __send_seq_num
 
     # Ensure data not longer than max PAYLOAD
     if len(byte_msg) > PAYLOAD:
@@ -361,6 +362,7 @@ def rdt_send(sockd, byte_msg):
             # print("rdt_send(): Re-sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(payload))
             print("rdt_send(): Re-sent one message [%d] of size %d " % (__send_seq_num, sent_len))
 
+
 def __make_ack(seq_num):
     """Make ACK [seq_num].
 
@@ -405,9 +407,7 @@ def rdt_recv(sockd, length):
     Note: Catch any known error and report to the user.
     """
     # Your implementation
-    global __peeraddr, __data_buffer
-
-    __recv_seq_num = 0
+    global __peeraddr, __data_buffer, __recv_seq_num
 
     recv_expected_data = False
     while not recv_expected_data:  # Repeat until received expected DATA
