@@ -315,7 +315,7 @@ def rdt_send(sockd, byte_msg):
     except socket.error as err_msg:
         print("Socket send error: ", err_msg)
         return -1
-    print("rdt_send(): Sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(__unpack_helper(msg)[0]))
+    print("rdt_send(): Sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(__unpack_helper(snd_pkt)[0]))
     # print("rdt_send(): Sent one message [%d] of size %d --> " % (__send_seq_num, sent_len))
 
     r_sock_list = [sockd]  # Used in select.select()
