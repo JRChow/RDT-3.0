@@ -332,6 +332,7 @@ def rdt_send(sockd, byte_msg):
                 if __is_corrupt(recv_msg) or __is_ack(recv_msg, 1 - __send_seq_num):
                     print("rdt_send(): Recv msg [corrupted] OR is wrong [ACK %d]... Keep waiting for ACK [%d]..."
                           % (1-__send_seq_num, __send_seq_num))
+                    print("rdt_send() msg is this -> " + str(__unpack_helper(recv_msg)))
                 # Happily received expected ACK
                 elif __is_ack(recv_msg, __send_seq_num):
                     print("rdt_send(): Received expected ACK [%d]" % __send_seq_num)

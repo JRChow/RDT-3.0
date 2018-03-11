@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="406" column="0" lean-forward="true" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
+            <state relative-caret-position="247">
+              <caret line="332" column="79" lean-forward="false" selection-start-line="332" selection-start-column="79" selection-end-line="332" selection-end-column="79" />
               <folding>
                 <element signature="e#1105#2367#0" expanded="false" />
                 <element signature="e#2405#2686#0" expanded="false" />
@@ -40,7 +40,7 @@
                 <element signature="e#7060#7212#1" expanded="false" />
                 <element signature="e#7398#7424#0" expanded="false" />
                 <element signature="e#9050#9105#0" expanded="false" />
-                <element signature="e#11565#12304#0" expanded="false" />
+                <element signature="e#11654#12393#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -423,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520753589063</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="rm global seq num">
+      <created>1520753759180</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1520753759180</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -472,7 +479,8 @@
     <MESSAGE value="add flip, change logic" />
     <MESSAGE value="add print msg" />
     <MESSAGE value="add debug msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="add debug msg" />
+    <MESSAGE value="rm global seq num" />
+    <option name="LAST_COMMIT_MESSAGE" value="rm global seq num" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -497,7 +505,7 @@
             <element signature="e#7060#7212#1" expanded="false" />
             <element signature="e#7398#7424#0" expanded="false" />
             <element signature="e#9050#9105#0" expanded="false" />
-            <element signature="e#11565#12304#0" expanded="false" />
+            <element signature="e#11654#12393#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -544,7 +552,7 @@
             <element signature="e#7060#7212#1" expanded="false" />
             <element signature="e#7398#7424#0" expanded="false" />
             <element signature="e#9050#9105#0" expanded="false" />
-            <element signature="e#11565#12304#0" expanded="false" />
+            <element signature="e#11654#12393#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -577,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="406" column="0" lean-forward="true" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
+        <state relative-caret-position="247">
+          <caret line="332" column="79" lean-forward="false" selection-start-line="332" selection-start-column="79" selection-end-line="332" selection-end-column="79" />
           <folding>
             <element signature="e#1105#2367#0" expanded="false" />
             <element signature="e#2405#2686#0" expanded="false" />
@@ -591,7 +599,7 @@
             <element signature="e#7060#7212#1" expanded="false" />
             <element signature="e#7398#7424#0" expanded="false" />
             <element signature="e#9050#9105#0" expanded="false" />
-            <element signature="e#11565#12304#0" expanded="false" />
+            <element signature="e#11654#12393#0" expanded="false" />
           </folding>
         </state>
       </provider>
