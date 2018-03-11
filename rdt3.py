@@ -232,7 +232,7 @@ def __is_corrupt(recv_pkt):
     # __Payload
     # }
 
-    print("           Checking msg -> " + __unpack_helper(recv_pkt))
+    print("           Checking msg -> " + str(__unpack_helper(recv_pkt)))
 
     # Dissect received packet
     (msg_type, seq_num, recv_checksum, payload_len), payload = __unpack_helper(recv_pkt)
