@@ -423,6 +423,7 @@ def rdt_recv(sockd, length):
         if __is_corrupt(recv_pkt) or __has_seq(recv_pkt, 1-__recv_seq_num):
             print("rdt_recv(): Received [corrupted] or [wrong seq_num (%d)] -> " % (1-__recv_seq_num)
                   + str(__unpack_helper(recv_pkt)))
+            print("rdt_recv(): Keep expecting seq [%d]" % __recv_seq_num)
             # Send old ACK
             snd_ack = __make_ack(1-__recv_seq_num)
             __udt_send(sockd, __peeraddr, snd_ack)

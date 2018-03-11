@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="424" column="18" lean-forward="false" selection-start-line="424" selection-start-column="18" selection-end-line="424" selection-end-column="18" />
+            <state relative-caret-position="467">
+              <caret line="425" column="73" lean-forward="true" selection-start-line="425" selection-start-column="73" selection-end-line="425" selection-end-column="73" />
               <folding>
                 <element signature="e#1160#2422#0" expanded="false" />
                 <element signature="e#2460#2741#0" expanded="false" />
@@ -409,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520753177917</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add print msg">
+      <created>1520753436162</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1520753436162</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -456,7 +463,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add str conv" />
     <MESSAGE value="add flip, change logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="add flip, change logic" />
+    <MESSAGE value="add print msg" />
+    <option name="LAST_COMMIT_MESSAGE" value="add print msg" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -561,8 +569,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="424" column="18" lean-forward="false" selection-start-line="424" selection-start-column="18" selection-end-line="424" selection-end-column="18" />
+        <state relative-caret-position="467">
+          <caret line="425" column="73" lean-forward="true" selection-start-line="425" selection-start-column="73" selection-end-line="425" selection-end-column="73" />
           <folding>
             <element signature="e#1160#2422#0" expanded="false" />
             <element signature="e#2460#2741#0" expanded="false" />
