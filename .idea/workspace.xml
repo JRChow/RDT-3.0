@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="423f13dc-1b7d-4266-bc69-698ace0d618a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/test-client2.py" afterPath="$PROJECT_DIR$/test-client2.py" />
-      <change beforePath="$PROJECT_DIR$/test-server2.py" afterPath="$PROJECT_DIR$/test-server2.py" />
+      <change beforePath="$PROJECT_DIR$/rdt3.py" afterPath="$PROJECT_DIR$/rdt3.py" />
     </list>
     <ignored path="Part2 - template.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-231">
-              <caret line="419" column="34" lean-forward="false" selection-start-line="419" selection-start-column="34" selection-end-line="419" selection-end-column="34" />
+            <state relative-caret-position="482">
+              <caret line="353" column="49" lean-forward="false" selection-start-line="353" selection-start-column="49" selection-end-line="353" selection-end-column="49" />
               <folding>
                 <element signature="e#1196#2458#0" expanded="false" />
                 <element signature="e#2496#2777#0" expanded="false" />
@@ -38,7 +37,7 @@
                 <element signature="e#4353#4809#0" expanded="false" />
                 <element signature="e#4845#5099#0" expanded="false" />
                 <element signature="e#9231#9286#0" expanded="false" />
-                <element signature="e#12075#12814#0" expanded="false" />
+                <element signature="e#12103#12842#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -47,8 +46,8 @@
       <file leaf-file-name="test-server2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-server2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="66" />
+            <state relative-caret-position="1260">
+              <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-client2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test-client2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-client2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
+            <state relative-caret-position="233">
               <caret line="81" column="37" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="81" selection-end-column="37" />
               <folding>
                 <element signature="e#99#109#0" expanded="true" />
@@ -103,8 +102,8 @@
       <find>recv</find>
       <find>udt_recv</find>
       <find>corrupt</find>
-      <find>rdt_send</find>
       <find>unpack</find>
+      <find>rdt_send</find>
       <find>unpack_helper</find>
     </findStrings>
   </component>
@@ -114,9 +113,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/rdt3.py" />
         <option value="$PROJECT_DIR$/test-server2.py" />
         <option value="$PROJECT_DIR$/test-client2.py" />
+        <option value="$PROJECT_DIR$/rdt3.py" />
       </list>
     </option>
   </component>
@@ -548,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520757926408</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="add msg for client too">
+      <created>1520758008607</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1520758008607</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -612,7 +618,8 @@
     <MESSAGE value="add header size to avoid corrupt" />
     <MESSAGE value="shorten dbg msg" />
     <MESSAGE value="add msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="add msg" />
+    <MESSAGE value="add msg for client too" />
+    <option name="LAST_COMMIT_MESSAGE" value="add msg for client too" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -634,7 +641,7 @@
             <element signature="e#4353#4809#0" expanded="false" />
             <element signature="e#4845#5099#0" expanded="false" />
             <element signature="e#9231#9286#0" expanded="false" />
-            <element signature="e#12075#12814#0" expanded="false" />
+            <element signature="e#12103#12842#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -678,7 +685,7 @@
             <element signature="e#4353#4809#0" expanded="false" />
             <element signature="e#4845#5099#0" expanded="false" />
             <element signature="e#9231#9286#0" expanded="false" />
-            <element signature="e#12075#12814#0" expanded="false" />
+            <element signature="e#12103#12842#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -691,10 +698,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test-client2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="81" column="37" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="81" selection-end-column="37" />
+          <folding>
+            <element signature="e#99#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-server2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="419" column="34" lean-forward="false" selection-start-line="419" selection-start-column="34" selection-end-line="419" selection-end-column="34" />
+        <state relative-caret-position="482">
+          <caret line="353" column="49" lean-forward="false" selection-start-line="353" selection-start-column="49" selection-end-line="353" selection-end-column="49" />
           <folding>
             <element signature="e#1196#2458#0" expanded="false" />
             <element signature="e#2496#2777#0" expanded="false" />
@@ -704,25 +729,7 @@
             <element signature="e#4353#4809#0" expanded="false" />
             <element signature="e#4845#5099#0" expanded="false" />
             <element signature="e#9231#9286#0" expanded="false" />
-            <element signature="e#12075#12814#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-server2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-client2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="81" column="37" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="81" selection-end-column="37" />
-          <folding>
-            <element signature="e#99#109#0" expanded="true" />
+            <element signature="e#12103#12842#0" expanded="false" />
           </folding>
         </state>
       </provider>

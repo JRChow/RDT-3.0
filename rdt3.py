@@ -342,7 +342,7 @@ def rdt_send(sockd, byte_msg):
                 elif __is_ack(recv_msg, __send_seq_num):
                     print("rdt_send(): Received expected ACK [%d]" % __send_seq_num)
                     __send_seq_num ^= 1  # Flip sequence number
-                    return sent_len  # Return size of data sent
+                    return sent_len - HEADER_SIZE  # Return size of data sent
                 # Received intact DATA while waiting for ACK
                 else:  # TODO: find right logic!
                     # Assume ACK has been received (otherwise it cannot send DATA)
@@ -351,7 +351,7 @@ def rdt_send(sockd, byte_msg):
                     __send_seq_num ^= 1  # Flip sequence number
                     __data_buffer.append(recv_msg) # Buffer data...
                     # Assume successfully sent, return
-                    return sent_len
+                    return sent_len - HEADER_SIZE
 
         else:  # Timeout
             print("Timeout!")
