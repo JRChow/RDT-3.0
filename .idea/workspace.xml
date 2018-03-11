@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="423f13dc-1b7d-4266-bc69-698ace0d618a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/rdt3.py" afterPath="$PROJECT_DIR$/rdt3.py" />
+      <change beforePath="$PROJECT_DIR$/test-server2.py" afterPath="$PROJECT_DIR$/test-server2.py" />
     </list>
     <ignored path="Part2 - template.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="439" column="42" lean-forward="false" selection-start-line="439" selection-start-column="29" selection-end-line="439" selection-end-column="42" />
+            <state relative-caret-position="-231">
+              <caret line="419" column="34" lean-forward="false" selection-start-line="419" selection-start-column="34" selection-end-line="419" selection-end-column="34" />
               <folding>
                 <element signature="e#1196#2458#0" expanded="false" />
                 <element signature="e#2496#2777#0" expanded="false" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-server2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test-server2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-server2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="335">
-              <caret line="79" column="43" lean-forward="false" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="43" />
+              <caret line="79" column="57" lean-forward="false" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -113,9 +113,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test-server2.py" />
         <option value="$PROJECT_DIR$/test-client2.py" />
         <option value="$PROJECT_DIR$/rdt3.py" />
+        <option value="$PROJECT_DIR$/test-server2.py" />
       </list>
     </option>
   </component>
@@ -533,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520757283442</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="shorten dbg msg">
+      <created>1520757760084</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1520757760084</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -595,7 +602,8 @@
     <MESSAGE value="minor fix" />
     <MESSAGE value="change msg for debug" />
     <MESSAGE value="add header size to avoid corrupt" />
-    <option name="LAST_COMMIT_MESSAGE" value="add header size to avoid corrupt" />
+    <MESSAGE value="shorten dbg msg" />
+    <option name="LAST_COMMIT_MESSAGE" value="shorten dbg msg" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -674,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-server2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="79" column="43" lean-forward="false" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test-client2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1185">
@@ -694,8 +694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="439" column="42" lean-forward="false" selection-start-line="439" selection-start-column="29" selection-end-line="439" selection-end-column="42" />
+        <state relative-caret-position="-231">
+          <caret line="419" column="34" lean-forward="false" selection-start-line="419" selection-start-column="34" selection-end-line="419" selection-end-column="34" />
           <folding>
             <element signature="e#1196#2458#0" expanded="false" />
             <element signature="e#2496#2777#0" expanded="false" />
@@ -707,6 +707,14 @@
             <element signature="e#9231#9286#0" expanded="false" />
             <element signature="e#12075#12814#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-server2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="79" column="57" lean-forward="false" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
