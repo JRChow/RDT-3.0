@@ -232,18 +232,18 @@ def __is_corrupt(recv_pkt):
     # __Payload
     # }
 
-    print("           Checking msg -> " + str(__unpack_helper(recv_pkt)))
+    # print("           Checking msg -> " + str(__unpack_helper(recv_pkt)))
 
     # Dissect received packet
     (msg_type, seq_num, recv_checksum, payload_len), payload = __unpack_helper(recv_pkt)
-    print("           : received checksum = ", recv_checksum)
+    # print("           : received checksum = ", recv_checksum)
 
     # Reconstruct initial message
     init_msg = struct.Struct(MSG_FORMAT).pack(msg_type, seq_num, 0, payload_len) + payload
 
     # Calculate checksum
     calc_checksum = ___int_chksum(bytearray(init_msg))
-    print("           : calc checksum = ", calc_checksum)
+    # print("           : calc checksum = ", calc_checksum)
 
     result = recv_checksum != calc_checksum
     # print("corrupt -> " + str(result))
