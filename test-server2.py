@@ -77,7 +77,7 @@ def main():
     print("Start receiving the file . . .")
     received = 0
     while received < filelength:
-        print("progress: %d / %d" % (received, filelength))
+        print("server progress: %d / %d" % (received, filelength))
         rmsg = rdt.rdt_recv(sockfd, MSG_LEN)
         if rmsg == b'':
             print("Encountered receive error! Has received", received, "so far.")
