@@ -334,7 +334,7 @@ def rdt_send(sockd, byte_msg):
                 if __is_corrupt(recv_msg) or __is_ack(recv_msg, 1 - __send_seq_num):
                     print("rdt_send(): Recv msg [corrupted] OR is wrong [ACK %d]... Keep waiting for ACK [%d]..."
                           % (1-__send_seq_num, __send_seq_num))
-                    print("rdt_send() msg is this -> " + str(__unpack_helper(recv_msg)))
+                    print("rdt_send() msg is this -> " + str(__unpack_helper(recv_msg)[0]))
                 # Happily received expected ACK
                 elif __is_ack(recv_msg, __send_seq_num):
                     print("rdt_send(): Received expected ACK [%d]" % __send_seq_num)
@@ -343,7 +343,7 @@ def rdt_send(sockd, byte_msg):
                 # Received intact DATA while waiting for ACK
                 else:  # TODO: find right logic!
                     # Assume ACK has been received (otherwise it cannot send DATA)
-                    print("rdt_send(): Received DATA?!  -> " + str(__unpack_helper(recv_msg))
+                    print("rdt_send(): Received DATA?!  -> " + str(__unpack_helper(recv_msg)[0])
                           + "... Assume received expected ACK [%d]" % __send_seq_num)
                     __send_seq_num ^= 1  # Flip sequence number
                     __data_buffer.append(recv_msg) # Buffer data...
@@ -414,7 +414,7 @@ def rdt_recv(sockd, length):
         # Receive packet
         if len(__data_buffer) > 0:
             recv_pkt = __data_buffer.pop(0)
-            print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)))
+            print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)[0]))
         else:
             try:
                 recv_pkt = __udt_recv(sockd, length)
@@ -425,7 +425,7 @@ def rdt_recv(sockd, length):
         # If packet is corrupt or has wrong seq num, send old ACK
         if __is_corrupt(recv_pkt) or __has_seq(recv_pkt, 1-__recv_seq_num):
             print("rdt_recv(): Received [corrupted] or [wrong seq_num (%d)] -> " % (1-__recv_seq_num)
-                  + str(__unpack_helper(recv_pkt)))
+                  + str(__unpack_helper(recv_pkt)[0]))
             print("-- is corrupt ? => " + str(__is_corrupt(recv_pkt)))
             print("rdt_recv(): Keep expecting seq [%d]" % __recv_seq_num)
             # Send old ACK
