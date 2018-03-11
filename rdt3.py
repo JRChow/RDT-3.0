@@ -41,6 +41,9 @@ __data_buffer = []
 __send_seq_num = 0
 __recv_seq_num = 0
 
+# Last ACK number
+__last_ack_no = None
+
 
 # internal functions - being called within the module
 def __udt_send(sockd, peer_addr, byte_msg):
@@ -297,7 +300,7 @@ def rdt_send(sockd, byte_msg):
     length. Catch any known error and report to the user.
     """
     # Your implementation
-    global PAYLOAD, __peeraddr, __data_buffer, HEADER_SIZE, __send_seq_num
+    global PAYLOAD, __peeraddr, __data_buffer, HEADER_SIZE, __send_seq_num, __last_ack_no
 
     # Ensure data not longer than max PAYLOAD
     if len(byte_msg) > PAYLOAD:
@@ -343,13 +346,14 @@ def rdt_send(sockd, byte_msg):
                     __send_seq_num ^= 1  # Flip sequence number
                     return sent_len - HEADER_SIZE  # Return size of data sent (payload only)
                 # Received *complete* DATA while waiting for ACK
-                else:  # TODO: find right logic!
+                else:  # TODO: testing!
                     print("rdt_send(): recv DATA ?! -buffer-> " + str(__unpack_helper(recv_msg)[0]))
                     __data_buffer.append(recv_msg)  # Buffer data...
 
                     # ACK the received DATA
                     (_, data_seq_num, _, _), _ = __unpack_helper(recv_msg)
                     __udt_send(sockd, __peeraddr, __make_ack(data_seq_num))
+                    __last_ack_no = data_seq_num
                     print("rdt_send(): ACK DATA [%d]" % data_seq_num)
 
         else:  # Timeout
@@ -409,7 +413,7 @@ def rdt_recv(sockd, length):
 
     Note: Catch any known error and report to the user.
     """
-    global __peeraddr, __data_buffer, __recv_seq_num, HEADER_SIZE
+    global __peeraddr, __data_buffer, __recv_seq_num, HEADER_SIZE, __last_ack_no
 
     # Check if something in buffer
     if len(__data_buffer) > 0:
@@ -436,6 +440,7 @@ def rdt_recv(sockd, length):
             # Send old ACK
             snd_ack = __make_ack(1-__recv_seq_num)
             __udt_send(sockd, __peeraddr, snd_ack)
+            __last_ack_no = 1-__recv_seq_num
             print("rdt_recv(): Sent old ACK [%d]" % (1-__recv_seq_num))
         # If received DATA with expected seq num, send ACK
         elif __has_seq(recv_pkt, __recv_seq_num):
@@ -445,6 +450,7 @@ def rdt_recv(sockd, length):
             # Send right ACK
             __udt_send(sockd, __peeraddr, __make_ack(__recv_seq_num))
             print("rdt_recv(): Sent expected ACK [%d]" % __recv_seq_num)
+            __last_ack_no = __recv_seq_num
             __recv_seq_num ^= 1  # Flip seq num
             return payload
 
@@ -470,6 +476,8 @@ def rdt_close(sockd):
     (2) Before closing the RDT socket, the reliable layer needs to wait for TWAIT
     time units before closing the socket.
     """
+    global __last_ack_no
+
     r_sock_list = [sockd]  # Used in select.select()
 
     ok_to_close = False
@@ -486,10 +494,10 @@ def rdt_close(sockd):
                     return -1
                 print("rdt_close(): Got activity -> " + str(__unpack_helper(recv_pkt)[0]))
                 # If not corrupt and is DATA [last_ack_num]
-                if not __is_corrupt(recv_pkt) and __is_data(recv_pkt, __recv_seq_num):
+                if not __is_corrupt(recv_pkt) and __is_data(recv_pkt, __last_ack_no):
                     # Ack the DATA packet
-                    __udt_send(sockd, __peeraddr, __make_ack(__recv_seq_num))
-                    print("rdt_close(): Sent ACK[%d]" % __recv_seq_num)
+                    __udt_send(sockd, __peeraddr, __make_ack(__last_ack_no))
+                    print("rdt_close(): Sent last ACK[%d]" % __recv_seq_num)
         else:  # Timeout!
             print("rdt_close(): time to CLOSE!!!")
             ok_to_close = True
