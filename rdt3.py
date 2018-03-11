@@ -443,11 +443,22 @@ def rdt_recv(sockd, length):
             # print(("rdt_recv(): Received expected DATA [%d] -> " % __recv_seq_num) + str(payload))
             print(("rdt_recv(): Received expected DATA [%d]" % __recv_seq_num))
             # Send right ACK
-            snd_ack = __make_ack(__recv_seq_num)
-            __udt_send(sockd, __peeraddr, snd_ack)
+            __udt_send(sockd, __peeraddr, __make_ack(__recv_seq_num))
             print("rdt_recv(): Sent expected ACK [%d]" % __recv_seq_num)
             __recv_seq_num ^= 1  # Flip seq num
             return payload
+
+
+def __is_data(recv_pkt, seq_num):
+    """Check if the received packet is DATA [seq_num]
+
+    Input arguments: the received packet, sequence number
+
+    Return  -> True if so; False otherwise.
+    """
+    global TYPE_DATA
+    (pkt_type, pkt_seq, _, _), _ = __unpack_helper(recv_pkt)
+    return pkt_type == TYPE_DATA and pkt_seq == seq_num
 
 
 def rdt_close(sockd):
@@ -459,8 +470,27 @@ def rdt_close(sockd):
     (2) Before closing the RDT socket, the reliable layer needs to wait for TWAIT
     time units before closing the socket.
     """
-    # TODO: Add logic
-    try:
-        sockd.close()
-    except socket.error as emsg:
-        print("Socket close error: ", emsg)
+    r_sock_list = [sockd]  # Used in select.select()
+
+    r, _, _ = select.select(r_sock_list, [], [], TWAIT)  # Wait for TWAIT time
+    if r:  # Incoming activity
+        for sock in r:
+            # Try to receive
+            try:
+                recv_pkt = __udt_recv(sock, PAYLOAD + HEADER_SIZE)  # Add header size
+            except socket.error as err_msg:
+                print("rdt_close(): __udt_recv error: ", err_msg)
+                return -1
+            # If not corrupt and is DATA [last_ack_num]
+            if not __is_corrupt(recv_pkt) and __is_data(recv_pkt, 1-__recv_seq_num):
+                # Ack the DATA packet
+                __udt_send(sockd, __peeraddr, __make_ack(1-__recv_seq_num))
+
+    else:  # Timeout!
+        # Close socket
+        try:
+            sockd.close()
+        except socket.error as err_msg:
+            print("Socket close error: ", err_msg)
+
+

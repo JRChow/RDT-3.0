@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="423f13dc-1b7d-4266-bc69-698ace0d618a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/rdt3.py" afterPath="$PROJECT_DIR$/rdt3.py" />
     </list>
     <ignored path="Part2 - template.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="419" column="43" lean-forward="true" selection-start-line="419" selection-start-column="43" selection-end-line="419" selection-end-column="43" />
+            <state relative-caret-position="513">
+              <caret line="487" column="16" lean-forward="false" selection-start-line="487" selection-start-column="16" selection-end-line="487" selection-end-column="16" />
               <folding>
                 <element signature="e#1237#2499#0" expanded="false" />
                 <element signature="e#2537#2818#0" expanded="false" />
@@ -44,16 +45,17 @@
                 <element signature="e#11634#11697#0" expanded="false" />
                 <element signature="e#12056#12795#0" expanded="false" />
                 <element signature="e#14032#14113#0" expanded="false" />
+                <element signature="e#15377#15676#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-server2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test-server2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-server2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="320">
-              <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+              <caret line="79" column="30" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,8 +112,8 @@
       <find>corrupt</find>
       <find>unpack</find>
       <find>unpack_helper</find>
-      <find>send ack</find>
       <find>rdt_send</find>
+      <find>send ack</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,9 +122,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/rdt3.py" />
         <option value="$PROJECT_DIR$/test-client2.py" />
         <option value="$PROJECT_DIR$/test-server2.py" />
+        <option value="$PROJECT_DIR$/rdt3.py" />
       </list>
     </option>
   </component>
@@ -589,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520761061191</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="change if data logic">
+      <created>1520761151015</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1520761151015</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -606,6 +615,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -615,7 +625,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -687,6 +696,7 @@
             <element signature="e#11634#11697#0" expanded="false" />
             <element signature="e#12056#12795#0" expanded="false" />
             <element signature="e#14032#14113#0" expanded="false" />
+            <element signature="e#15377#15676#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -738,31 +748,7 @@
             <element signature="e#11634#11697#0" expanded="false" />
             <element signature="e#12056#12795#0" expanded="false" />
             <element signature="e#14032#14113#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rdt3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="419" column="43" lean-forward="true" selection-start-line="419" selection-start-column="43" selection-end-line="419" selection-end-column="43" />
-          <folding>
-            <element signature="e#1237#2499#0" expanded="false" />
-            <element signature="e#2537#2818#0" expanded="false" />
-            <element signature="e#2854#3465#0" expanded="false" />
-            <element signature="e#3562#3912#0" expanded="false" />
-            <element signature="e#3937#4360#0" expanded="false" />
-            <element signature="e#4394#4850#0" expanded="false" />
-            <element signature="e#4886#5140#0" expanded="false" />
-            <element signature="e#5179#6061#0" expanded="false" />
-            <element signature="e#6094#6252#0" expanded="false" />
-            <element signature="e#6287#7257#0" expanded="false" />
-            <element signature="e#7297#7930#0" expanded="false" />
-            <element signature="e#7971#8314#0" expanded="false" />
-            <element signature="e#9272#9327#0" expanded="false" />
-            <element signature="e#11634#11697#0" expanded="false" />
-            <element signature="e#12056#12795#0" expanded="false" />
-            <element signature="e#14032#14113#0" expanded="false" />
+            <element signature="e#15377#15676#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -788,8 +774,34 @@
     <entry file="file://$PROJECT_DIR$/test-server2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <caret line="79" column="30" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rdt3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="487" column="16" lean-forward="false" selection-start-line="487" selection-start-column="16" selection-end-line="487" selection-end-column="16" />
+          <folding>
+            <element signature="e#1237#2499#0" expanded="false" />
+            <element signature="e#2537#2818#0" expanded="false" />
+            <element signature="e#2854#3465#0" expanded="false" />
+            <element signature="e#3562#3912#0" expanded="false" />
+            <element signature="e#3937#4360#0" expanded="false" />
+            <element signature="e#4394#4850#0" expanded="false" />
+            <element signature="e#4886#5140#0" expanded="false" />
+            <element signature="e#5179#6061#0" expanded="false" />
+            <element signature="e#6094#6252#0" expanded="false" />
+            <element signature="e#6287#7257#0" expanded="false" />
+            <element signature="e#7297#7930#0" expanded="false" />
+            <element signature="e#7971#8314#0" expanded="false" />
+            <element signature="e#9272#9327#0" expanded="false" />
+            <element signature="e#11634#11697#0" expanded="false" />
+            <element signature="e#12056#12795#0" expanded="false" />
+            <element signature="e#14032#14113#0" expanded="false" />
+            <element signature="e#15377#15676#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
