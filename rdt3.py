@@ -232,7 +232,7 @@ def __is_corrupt(recv_pkt):
     # __Payload
     # }
 
-    print("is_corrupt() checking msg -> " + str(__unpack_helper(recv_pkt)))
+    # print("is_corrupt() checking msg -> " + str(__unpack_helper(recv_pkt)))
 
     # Dissect received packet
     (msg_type, seq_num, recv_checksum, payload_len), payload = __unpack_helper(recv_pkt)
@@ -328,7 +328,7 @@ def rdt_send(sockd, byte_msg):
             for sock in r:
                 # Try to receive ACK (or DATA)
                 try:
-                    recv_msg = __udt_recv(sock, PAYLOAD + HEADER_SIZE)
+                    recv_msg = __udt_recv(sock, PAYLOAD + HEADER_SIZE)  # Add header size
                 except socket.error as err_msg:
                     print("__udt_recv error: ", err_msg)
                     return -1
@@ -410,7 +410,7 @@ def rdt_recv(sockd, length):
     Note: Catch any known error and report to the user.
     """
     # Your implementation
-    global __peeraddr, __data_buffer, __recv_seq_num
+    global __peeraddr, __data_buffer, __recv_seq_num, HEADER_SIZE
 
     recv_expected_data = False
     while not recv_expected_data:  # Repeat until received expected DATA
@@ -420,7 +420,7 @@ def rdt_recv(sockd, length):
             print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)[0]))
         else:
             try:
-                recv_pkt = __udt_recv(sockd, length)
+                recv_pkt = __udt_recv(sockd, length + HEADER_SIZE)
             except socket.error as err_msg:
                 print("rdt_recv(): Socket receive error: " + str(err_msg))
                 return b''
