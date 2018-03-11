@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="487" column="16" lean-forward="false" selection-start-line="487" selection-start-column="16" selection-end-line="487" selection-end-column="16" />
+            <state relative-caret-position="425">
+              <caret line="488" column="71" lean-forward="true" selection-start-line="488" selection-start-column="71" selection-end-line="488" selection-end-column="71" />
               <folding>
                 <element signature="e#1237#2499#0" expanded="false" />
                 <element signature="e#2537#2818#0" expanded="false" />
@@ -598,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520761151015</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add initial close logic">
+      <created>1520762256101</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1520762256101</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -666,7 +673,8 @@
     <MESSAGE value="minus header size" />
     <MESSAGE value="improve msg" />
     <MESSAGE value="change if data logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="change if data logic" />
+    <MESSAGE value="add initial close logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="add initial close logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -781,8 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="487" column="16" lean-forward="false" selection-start-line="487" selection-start-column="16" selection-end-line="487" selection-end-column="16" />
+        <state relative-caret-position="425">
+          <caret line="488" column="71" lean-forward="true" selection-start-line="488" selection-start-column="71" selection-end-line="488" selection-end-column="71" />
           <folding>
             <element signature="e#1237#2499#0" expanded="false" />
             <element signature="e#2537#2818#0" expanded="false" />

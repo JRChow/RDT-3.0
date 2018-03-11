@@ -481,12 +481,14 @@ def rdt_close(sockd):
             except socket.error as err_msg:
                 print("rdt_close(): __udt_recv error: ", err_msg)
                 return -1
+            print("rdt_close(): Got activity -> " + str(__unpack_helper(recv_pkt)[0]))
             # If not corrupt and is DATA [last_ack_num]
             if not __is_corrupt(recv_pkt) and __is_data(recv_pkt, 1-__recv_seq_num):
                 # Ack the DATA packet
                 __udt_send(sockd, __peeraddr, __make_ack(1-__recv_seq_num))
-
+                print("rdt_close(): Sent ACK[%d]" % (1-__recv_seq_num))
     else:  # Timeout!
+        print("OK... time to CLOSE!!!")
         # Close socket
         try:
             sockd.close()
