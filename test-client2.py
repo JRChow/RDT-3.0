@@ -76,7 +76,7 @@ def main():
     starttime = time.monotonic()  # record start time
     sent = 0
     while sent < filelength:
-        print("server progress: %d / %d" % (sent, filelength))
+        print("---- Client progress: %d / %d" % (sent, filelength))
         smsg = fobj.read(MSG_LEN)
         if smsg == b'':
             print("EOF is reached!!")

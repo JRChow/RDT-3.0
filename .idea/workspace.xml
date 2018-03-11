@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="423f13dc-1b7d-4266-bc69-698ace0d618a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/rdt3.py" afterPath="$PROJECT_DIR$/rdt3.py" />
+      <change beforePath="$PROJECT_DIR$/test-client2.py" afterPath="$PROJECT_DIR$/test-client2.py" />
+      <change beforePath="$PROJECT_DIR$/test-server2.py" afterPath="$PROJECT_DIR$/test-server2.py" />
     </list>
     <ignored path="Part2 - template.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +24,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="372">
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-server2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test-server2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-server2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -73,8 +74,8 @@
       <file leaf-file-name="test-client2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-client2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="81" column="37" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="81" selection-end-column="37" />
+            <state relative-caret-position="230">
+              <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
               <folding>
                 <element signature="e#99#109#0" expanded="true" />
               </folding>
@@ -110,8 +111,9 @@
       <find>udt_recv</find>
       <find>corrupt</find>
       <find>unpack</find>
-      <find>rdt_send</find>
       <find>unpack_helper</find>
+      <find>send ack</find>
+      <find>rdt_send</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,9 +122,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test-server2.py" />
-        <option value="$PROJECT_DIR$/test-client2.py" />
         <option value="$PROJECT_DIR$/rdt3.py" />
+        <option value="$PROJECT_DIR$/test-client2.py" />
+        <option value="$PROJECT_DIR$/test-server2.py" />
       </list>
     </option>
   </component>
@@ -575,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520759040165</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="change if data logic">
+      <created>1520760682499</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1520760682499</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -642,7 +651,8 @@
     <MESSAGE value="add msg for client too" />
     <MESSAGE value="minus header size" />
     <MESSAGE value="improve msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve msg" />
+    <MESSAGE value="change if data logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="change if data logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -727,32 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run-simulation2-OSX.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-client2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="81" column="37" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="81" selection-end-column="37" />
-          <folding>
-            <element signature="e#99#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-server2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -775,6 +759,32 @@
             <element signature="e#12056#12795#0" expanded="false" />
             <element signature="e#14032#14113#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-client2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+          <folding>
+            <element signature="e#99#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run-simulation2-OSX.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-server2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
