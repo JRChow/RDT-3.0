@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="443" column="90" lean-forward="true" selection-start-line="443" selection-start-column="90" selection-end-line="443" selection-end-column="90" />
+            <state relative-caret-position="75">
+              <caret line="417" column="101" lean-forward="true" selection-start-line="417" selection-start-column="101" selection-end-line="417" selection-end-column="101" />
               <folding>
                 <element signature="e#1237#2499#0" expanded="false" />
                 <element signature="e#2537#2818#0" expanded="false" />
@@ -44,8 +44,8 @@
                 <element signature="e#9272#9327#0" expanded="false" />
                 <element signature="e#11634#11697#0" expanded="false" />
                 <element signature="e#12056#12795#0" expanded="false" />
-                <element signature="e#14072#14153#0" expanded="false" />
-                <element signature="e#15457#15756#0" expanded="false" />
+                <element signature="e#14060#14141#0" expanded="false" />
+                <element signature="e#15433#15732#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -619,7 +619,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520763238957</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="add size msg info">
+      <created>1520763636887</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1520763636887</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -664,7 +671,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add flip, change logic" />
     <MESSAGE value="rm global seq num" />
     <MESSAGE value="add debug msg" />
     <MESSAGE value="add print msg" />
@@ -689,7 +695,8 @@
     <MESSAGE value="add initial close logic" />
     <MESSAGE value="add dbg msg" />
     <MESSAGE value="flip last_ackno" />
-    <option name="LAST_COMMIT_MESSAGE" value="flip last_ackno" />
+    <MESSAGE value="add size msg info" />
+    <option name="LAST_COMMIT_MESSAGE" value="add size msg info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -718,8 +725,8 @@
             <element signature="e#9272#9327#0" expanded="false" />
             <element signature="e#11634#11697#0" expanded="false" />
             <element signature="e#12056#12795#0" expanded="false" />
-            <element signature="e#14072#14153#0" expanded="false" />
-            <element signature="e#15457#15756#0" expanded="false" />
+            <element signature="e#14060#14141#0" expanded="false" />
+            <element signature="e#15433#15732#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -770,8 +777,8 @@
             <element signature="e#9272#9327#0" expanded="false" />
             <element signature="e#11634#11697#0" expanded="false" />
             <element signature="e#12056#12795#0" expanded="false" />
-            <element signature="e#14072#14153#0" expanded="false" />
-            <element signature="e#15457#15756#0" expanded="false" />
+            <element signature="e#14060#14141#0" expanded="false" />
+            <element signature="e#15433#15732#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -804,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="443" column="90" lean-forward="true" selection-start-line="443" selection-start-column="90" selection-end-line="443" selection-end-column="90" />
+        <state relative-caret-position="75">
+          <caret line="417" column="101" lean-forward="true" selection-start-line="417" selection-start-column="101" selection-end-line="417" selection-end-column="101" />
           <folding>
             <element signature="e#1237#2499#0" expanded="false" />
             <element signature="e#2537#2818#0" expanded="false" />
@@ -822,8 +829,8 @@
             <element signature="e#9272#9327#0" expanded="false" />
             <element signature="e#11634#11697#0" expanded="false" />
             <element signature="e#12056#12795#0" expanded="false" />
-            <element signature="e#14072#14153#0" expanded="false" />
-            <element signature="e#15457#15756#0" expanded="false" />
+            <element signature="e#14060#14141#0" expanded="false" />
+            <element signature="e#15433#15732#0" expanded="false" />
           </folding>
         </state>
       </provider>
