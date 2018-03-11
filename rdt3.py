@@ -33,10 +33,6 @@ __peeraddr = ()  # set by rdt_peer()
 __LOSS_RATE = 0.0  # set by rdt_network_init()
 __ERR_RATE = 0.0
 
-# Packet number
-__send_seq_num = 0
-__recv_seq_num = 0
-
 # Data buffer
 __data_buffer = []
 
@@ -294,7 +290,10 @@ def rdt_send(sockd, byte_msg):
     length. Catch any known error and report to the user.
     """
     # Your implementation
-    global PAYLOAD, __peeraddr, __send_seq_num, __data_buffer
+    global PAYLOAD, __peeraddr, __data_buffer
+
+    # Packet number
+    __send_seq_num = 0
 
     # Ensure data not longer than max PAYLOAD
     if len(byte_msg) > PAYLOAD:
@@ -404,7 +403,9 @@ def rdt_recv(sockd, length):
     Note: Catch any known error and report to the user.
     """
     # Your implementation
-    global __peeraddr, __recv_seq_num, __data_buffer
+    global __peeraddr, __data_buffer
+
+    __recv_seq_num = 0
 
     recv_expected_data = False
     while not recv_expected_data:  # Repeat until received expected DATA
