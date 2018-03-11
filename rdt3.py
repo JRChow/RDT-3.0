@@ -348,7 +348,8 @@ def rdt_send(sockd, byte_msg):
                 # Received *complete* DATA while waiting for ACK
                 else:  # TODO: testing!
                     print("rdt_send(): recv DATA ?! -buffer-> " + str(__unpack_helper(recv_msg)[0]))
-                    __data_buffer.append(recv_msg)  # Buffer data...
+                    if recv_msg not in __data_buffer:  # If not in buffer, add
+                        __data_buffer.append(recv_msg)  # Buffer data...
 
                     # ACK the received DATA
                     (_, data_seq_num, _, _), _ = __unpack_helper(recv_msg)

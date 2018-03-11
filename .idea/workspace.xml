@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="504" column="16" lean-forward="true" selection-start-line="504" selection-start-column="16" selection-end-line="504" selection-end-column="16" />
+            <state relative-caret-position="171">
+              <caret line="350" column="78" lean-forward="false" selection-start-line="350" selection-start-column="78" selection-end-line="350" selection-end-column="78" />
               <folding>
                 <element signature="e#1277#2539#0" expanded="false" />
                 <element signature="e#2577#2858#0" expanded="false" />
@@ -42,9 +42,9 @@
                 <element signature="e#7337#7970#0" expanded="false" />
                 <element signature="e#8011#8354#0" expanded="false" />
                 <element signature="e#9327#9382#0" expanded="false" />
-                <element signature="e#11729#11792#0" expanded="false" />
-                <element signature="e#12151#12890#0" expanded="false" />
-                <element signature="e#14170#14251#0" expanded="false" />
+                <element signature="e#11812#11875#0" expanded="false" />
+                <element signature="e#12234#12973#0" expanded="false" />
+                <element signature="e#14253#14334#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -640,7 +640,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520764097813</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="add last_ack_no">
+      <created>1520764687618</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1520764687618</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -685,7 +692,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add print msg" />
     <MESSAGE value="max recv size (payload -&gt; payload + header)" />
     <MESSAGE value="rm long msg" />
     <MESSAGE value="seq num still need to be global..." />
@@ -710,7 +716,8 @@
     <MESSAGE value="add size msg info" />
     <MESSAGE value="align" />
     <MESSAGE value="add loop in close" />
-    <option name="LAST_COMMIT_MESSAGE" value="add loop in close" />
+    <MESSAGE value="add last_ack_no" />
+    <option name="LAST_COMMIT_MESSAGE" value="add last_ack_no" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -737,9 +744,9 @@
             <element signature="e#7337#7970#0" expanded="false" />
             <element signature="e#8011#8354#0" expanded="false" />
             <element signature="e#9327#9382#0" expanded="false" />
-            <element signature="e#11729#11792#0" expanded="false" />
-            <element signature="e#12151#12890#0" expanded="false" />
-            <element signature="e#14170#14251#0" expanded="false" />
+            <element signature="e#11812#11875#0" expanded="false" />
+            <element signature="e#12234#12973#0" expanded="false" />
+            <element signature="e#14253#14334#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -788,9 +795,9 @@
             <element signature="e#7337#7970#0" expanded="false" />
             <element signature="e#8011#8354#0" expanded="false" />
             <element signature="e#9327#9382#0" expanded="false" />
-            <element signature="e#11729#11792#0" expanded="false" />
-            <element signature="e#12151#12890#0" expanded="false" />
-            <element signature="e#14170#14251#0" expanded="false" />
+            <element signature="e#11812#11875#0" expanded="false" />
+            <element signature="e#12234#12973#0" expanded="false" />
+            <element signature="e#14253#14334#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -823,8 +830,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="504" column="16" lean-forward="true" selection-start-line="504" selection-start-column="16" selection-end-line="504" selection-end-column="16" />
+        <state relative-caret-position="171">
+          <caret line="350" column="78" lean-forward="false" selection-start-line="350" selection-start-column="78" selection-end-line="350" selection-end-column="78" />
           <folding>
             <element signature="e#1277#2539#0" expanded="false" />
             <element signature="e#2577#2858#0" expanded="false" />
@@ -839,9 +846,9 @@
             <element signature="e#7337#7970#0" expanded="false" />
             <element signature="e#8011#8354#0" expanded="false" />
             <element signature="e#9327#9382#0" expanded="false" />
-            <element signature="e#11729#11792#0" expanded="false" />
-            <element signature="e#12151#12890#0" expanded="false" />
-            <element signature="e#14170#14251#0" expanded="false" />
+            <element signature="e#11812#11875#0" expanded="false" />
+            <element signature="e#12234#12973#0" expanded="false" />
+            <element signature="e#14253#14334#0" expanded="false" />
           </folding>
         </state>
       </provider>
