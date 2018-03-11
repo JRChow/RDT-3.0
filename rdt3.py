@@ -338,13 +338,13 @@ def rdt_send(sockd, byte_msg):
                     print("rdt_send(): Received expected ACK [%d]" % __send_seq_num)
                     __send_seq_num ^= 1  # Flip sequence number
                     return sent_len  # Return size of data sent
-                # Received DATA while waiting for ACK
+                # Received intact DATA while waiting for ACK
                 else:  # TODO: find right logic!
                     # Assume ACK has been received (otherwise it cannot send DATA)
                     print("rdt_send(): Received DATA?!  -> " + str(__unpack_helper(recv_msg))
                           + "... Assume received expected ACK [%d]" % __send_seq_num)
-                    # Buffer data...
-                    __data_buffer.append(recv_msg)
+                    __send_seq_num ^= 1  # Flip sequence number
+                    __data_buffer.append(recv_msg) # Buffer data...
                     # Assume successfully sent, return
                     return sent_len
 
@@ -406,20 +406,18 @@ def rdt_recv(sockd, length):
     # Your implementation
     global __peeraddr, __recv_seq_num, __data_buffer
 
-    if len(__data_buffer) > 0:
-        data = __data_buffer.pop(0)
-        print("<!> Something in buffer! -> " + str(__unpack_helper(data)))
-        (_), payload = __unpack_helper(data)
-        return payload
-
     recv_expected_data = False
     while not recv_expected_data:  # Repeat until received expected DATA
         # Receive packet
-        try:
-            recv_pkt = __udt_recv(sockd, length)
-        except socket.error as err_msg:
-            print("rdt_recv(): Socket receive error: " + str(err_msg))
-            return b''
+        if len(__data_buffer) > 0:
+            recv_pkt = __data_buffer.pop(0)
+            print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)))
+        else:
+            try:
+                recv_pkt = __udt_recv(sockd, length)
+            except socket.error as err_msg:
+                print("rdt_recv(): Socket receive error: " + str(err_msg))
+                return b''
 
         # If packet is corrupt or has wrong seq num, send old ACK
         if __is_corrupt(recv_pkt) or __has_seq(recv_pkt, 1-__recv_seq_num):
