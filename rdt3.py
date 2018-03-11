@@ -342,15 +342,16 @@ def rdt_send(sockd, byte_msg):
                     print("rdt_send(): Received expected ACK [%d]!" % __send_seq_num)
                     __send_seq_num ^= 1  # Flip sequence number
                     return sent_len - HEADER_SIZE  # Return size of data sent (payload only)
-                # Received complete DATA while waiting for ACK
+                # Received *complete* DATA while waiting for ACK
                 else:  # TODO: find right logic!
-                    # Assume ACK has been received
-                    print("rdt_send(): recv DATA ?! -buffer-> " + str(__unpack_helper(recv_msg)[0])
-                          + " | assume received expected ACK [%d]" % __send_seq_num)
-                    __send_seq_num ^= 1  # Flip sequence number
+                    print("rdt_send(): recv DATA ?! -buffer-> " + str(__unpack_helper(recv_msg)[0]))
                     __data_buffer.append(recv_msg)  # Buffer data...
-                    # Assume successfully sent, return
-                    return sent_len - HEADER_SIZE  # Return size of data sent (payload only)
+
+                    # ACK the received DATA
+                    (_, data_seq_num, _, _), _ = __unpack_helper(recv_msg)
+                    __udt_send(sockd, __peeraddr, __make_ack(data_seq_num))
+                    print("rdt_send(): ACK DATA [%d]" % data_seq_num)
+
         else:  # Timeout
             print("! TIMEOUT !")
             # Re-transmit packet
@@ -410,20 +411,22 @@ def rdt_recv(sockd, length):
     """
     global __peeraddr, __data_buffer, __recv_seq_num, HEADER_SIZE
 
+    # Check if something in buffer
+    if len(__data_buffer) > 0:
+        recv_pkt = __data_buffer.pop(0)  # Guaranteed to be NOT corrupt
+        print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)[0]))
+        print("rdt_recv(): Received expected DATA [%d]" % __recv_seq_num)
+        __recv_seq_num ^= 1  # Flip seq num
+        return __unpack_helper(recv_pkt)[1]
+
     recv_expected_data = False
     while not recv_expected_data:  # Repeat until received expected DATA
         # Try to receive packet...
-        # Check if something in buffer
-        if len(__data_buffer) > 0:
-            recv_pkt = __data_buffer.pop(0)
-            print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)[0]))
-        # If buffer empty, check socket
-        else:
-            try:
-                recv_pkt = __udt_recv(sockd, length + HEADER_SIZE)
-            except socket.error as err_msg:
-                print("rdt_recv(): Socket receive error: " + str(err_msg))
-                return b''
+        try:
+            recv_pkt = __udt_recv(sockd, length + HEADER_SIZE)
+        except socket.error as err_msg:
+            print("rdt_recv(): Socket receive error: " + str(err_msg))
+            return b''
 
         # If packet is corrupt or has wrong seq num, send old ACK
         if __is_corrupt(recv_pkt) or __has_seq(recv_pkt, 1-__recv_seq_num):
