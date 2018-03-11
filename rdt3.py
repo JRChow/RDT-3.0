@@ -472,25 +472,29 @@ def rdt_close(sockd):
     """
     r_sock_list = [sockd]  # Used in select.select()
 
-    r, _, _ = select.select(r_sock_list, [], [], TWAIT)  # Wait for TWAIT time
-    if r:  # Incoming activity
-        for sock in r:
-            # Try to receive
+    ok_to_close = False
+
+    while not ok_to_close:
+        r, _, _ = select.select(r_sock_list, [], [], TWAIT)  # Wait for TWAIT time
+        if r:  # Incoming activity
+            for sock in r:
+                # Try to receive
+                try:
+                    recv_pkt = __udt_recv(sock, PAYLOAD + HEADER_SIZE)  # Add header size
+                except socket.error as err_msg:
+                    print("rdt_close(): __udt_recv error: ", err_msg)
+                    return -1
+                print("rdt_close(): Got activity -> " + str(__unpack_helper(recv_pkt)[0]))
+                # If not corrupt and is DATA [last_ack_num]
+                if not __is_corrupt(recv_pkt) and __is_data(recv_pkt, __recv_seq_num):
+                    # Ack the DATA packet
+                    __udt_send(sockd, __peeraddr, __make_ack(__recv_seq_num))
+                    print("rdt_close(): Sent ACK[%d]" % __recv_seq_num)
+        else:  # Timeout!
+            print("rdt_close(): time to CLOSE!!!")
+            ok_to_close = True
+            # Close socket
             try:
-                recv_pkt = __udt_recv(sock, PAYLOAD + HEADER_SIZE)  # Add header size
+                sockd.close()
             except socket.error as err_msg:
-                print("rdt_close(): __udt_recv error: ", err_msg)
-                return -1
-            print("rdt_close(): Got activity -> " + str(__unpack_helper(recv_pkt)[0]))
-            # If not corrupt and is DATA [last_ack_num]
-            if not __is_corrupt(recv_pkt) and __is_data(recv_pkt, __recv_seq_num):
-                # Ack the DATA packet
-                __udt_send(sockd, __peeraddr, __make_ack(__recv_seq_num))
-                print("rdt_close(): Sent ACK[%d]" % __recv_seq_num)
-    else:  # Timeout!
-        print("OK... time to CLOSE!!!")
-        # Close socket
-        try:
-            sockd.close()
-        except socket.error as err_msg:
-            print("Socket close error: ", err_msg)
+                print("Socket close error: ", err_msg)

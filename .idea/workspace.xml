@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="417" column="101" lean-forward="true" selection-start-line="417" selection-start-column="101" selection-end-line="417" selection-end-column="101" />
+            <state relative-caret-position="467">
+              <caret line="494" column="31" lean-forward="false" selection-start-line="494" selection-start-column="31" selection-end-line="494" selection-end-column="31" />
               <folding>
                 <element signature="e#1237#2499#0" expanded="false" />
                 <element signature="e#2537#2818#0" expanded="false" />
@@ -626,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520763636887</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="align">
+      <created>1520763723977</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1520763723977</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -671,7 +678,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rm global seq num" />
     <MESSAGE value="add debug msg" />
     <MESSAGE value="add print msg" />
     <MESSAGE value="max recv size (payload -&gt; payload + header)" />
@@ -696,7 +702,8 @@
     <MESSAGE value="add dbg msg" />
     <MESSAGE value="flip last_ackno" />
     <MESSAGE value="add size msg info" />
-    <option name="LAST_COMMIT_MESSAGE" value="add size msg info" />
+    <MESSAGE value="align" />
+    <option name="LAST_COMMIT_MESSAGE" value="align" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -811,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="417" column="101" lean-forward="true" selection-start-line="417" selection-start-column="101" selection-end-line="417" selection-end-column="101" />
+        <state relative-caret-position="467">
+          <caret line="494" column="31" lean-forward="false" selection-start-line="494" selection-start-column="31" selection-end-line="494" selection-end-column="31" />
           <folding>
             <element signature="e#1237#2499#0" expanded="false" />
             <element signature="e#2537#2818#0" expanded="false" />
