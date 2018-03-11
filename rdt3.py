@@ -232,16 +232,18 @@ def __is_corrupt(recv_pkt):
     # __Payload
     # }
 
+    print("           Checking msg -> " + __unpack_helper(recv_pkt))
+
     # Dissect received packet
     (msg_type, seq_num, recv_checksum, payload_len), payload = __unpack_helper(recv_pkt)
-    # print("received checksum = ", recv_checksum)
+    print("           : received checksum = ", recv_checksum)
 
     # Reconstruct initial message
     init_msg = struct.Struct(MSG_FORMAT).pack(msg_type, seq_num, 0, payload_len) + payload
 
     # Calculate checksum
     calc_checksum = ___int_chksum(bytearray(init_msg))
-    # print("calc checksum = ", calc_checksum)
+    print("           : calc checksum = ", calc_checksum)
 
     result = recv_checksum != calc_checksum
     # print("corrupt -> " + str(result))
@@ -313,8 +315,8 @@ def rdt_send(sockd, byte_msg):
     except socket.error as err_msg:
         print("Socket send error: ", err_msg)
         return -1
-    # print("rdt_send(): Sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(msg))
-    print("rdt_send(): Sent one message [%d] of size %d --> " % (__send_seq_num, sent_len))
+    print("rdt_send(): Sent one message [%d] of size %d --> " % (__send_seq_num, sent_len) + str(msg))
+    # print("rdt_send(): Sent one message [%d] of size %d --> " % (__send_seq_num, sent_len))
 
     r_sock_list = [sockd]  # Used in select.select()
     recv_expected = False  # Received expected response or not

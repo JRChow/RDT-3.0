@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="316" column="91" lean-forward="true" selection-start-line="316" selection-start-column="91" selection-end-line="316" selection-end-column="91" />
+            <state relative-caret-position="366">
+              <caret line="234" column="68" lean-forward="true" selection-start-line="234" selection-start-column="68" selection-end-line="234" selection-end-column="68" />
               <folding>
                 <element signature="e#1196#2458#0" expanded="false" />
                 <element signature="e#2496#2777#0" expanded="false" />
@@ -36,9 +36,8 @@
                 <element signature="e#3896#4319#0" expanded="false" />
                 <element signature="e#4353#4809#0" expanded="false" />
                 <element signature="e#4845#5099#0" expanded="false" />
-                <element signature="e#6246#6395#1" expanded="false" />
-                <element signature="e#9126#9181#0" expanded="false" />
-                <element signature="e#11927#12666#0" expanded="false" />
+                <element signature="e#9218#9273#0" expanded="false" />
+                <element signature="e#12019#12758#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,6 +101,7 @@
       <find>6</find>
       <find>sent one</find>
       <find>unpack_helper</find>
+      <find>is_corrupt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -474,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520755585359</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="keep shortening">
+      <created>1520755675664</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1520755675664</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -528,7 +535,8 @@
     <MESSAGE value="rm long msg" />
     <MESSAGE value="seq num still need to be global..." />
     <MESSAGE value="shorten debug msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="shorten debug msg" />
+    <MESSAGE value="keep shortening" />
+    <option name="LAST_COMMIT_MESSAGE" value="keep shortening" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -549,9 +557,8 @@
             <element signature="e#3896#4319#0" expanded="false" />
             <element signature="e#4353#4809#0" expanded="false" />
             <element signature="e#4845#5099#0" expanded="false" />
-            <element signature="e#6246#6395#1" expanded="false" />
-            <element signature="e#9126#9181#0" expanded="false" />
-            <element signature="e#11927#12666#0" expanded="false" />
+            <element signature="e#9218#9273#0" expanded="false" />
+            <element signature="e#12019#12758#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -594,9 +601,8 @@
             <element signature="e#3896#4319#0" expanded="false" />
             <element signature="e#4353#4809#0" expanded="false" />
             <element signature="e#4845#5099#0" expanded="false" />
-            <element signature="e#6246#6395#1" expanded="false" />
-            <element signature="e#9126#9181#0" expanded="false" />
-            <element signature="e#11927#12666#0" expanded="false" />
+            <element signature="e#9218#9273#0" expanded="false" />
+            <element signature="e#12019#12758#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -629,8 +635,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="316" column="91" lean-forward="true" selection-start-line="316" selection-start-column="91" selection-end-line="316" selection-end-column="91" />
+        <state relative-caret-position="366">
+          <caret line="234" column="68" lean-forward="true" selection-start-line="234" selection-start-column="68" selection-end-line="234" selection-end-column="68" />
           <folding>
             <element signature="e#1196#2458#0" expanded="false" />
             <element signature="e#2496#2777#0" expanded="false" />
@@ -639,9 +645,8 @@
             <element signature="e#3896#4319#0" expanded="false" />
             <element signature="e#4353#4809#0" expanded="false" />
             <element signature="e#4845#5099#0" expanded="false" />
-            <element signature="e#6246#6395#1" expanded="false" />
-            <element signature="e#9126#9181#0" expanded="false" />
-            <element signature="e#11927#12666#0" expanded="false" />
+            <element signature="e#9218#9273#0" expanded="false" />
+            <element signature="e#12019#12758#0" expanded="false" />
           </folding>
         </state>
       </provider>
