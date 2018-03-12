@@ -417,7 +417,7 @@ def rdt_recv(sockd, length):
     global __peeraddr, __data_buffer, __recv_seq_num, HEADER_SIZE, __last_ack_no
 
     # Check if something in buffer
-    if len(__data_buffer) > 0:
+    while len(__data_buffer) > 0:
         recv_pkt = __data_buffer.pop(0)  # Guaranteed to be NOT corrupt, and already ACK-ed in rdt_send()
         print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)[0]))
         if __has_seq(recv_pkt, __recv_seq_num):  # Buffered data has expected seq num
