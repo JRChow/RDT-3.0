@@ -26,9 +26,10 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="422" column="31" lean-forward="true" selection-start-line="422" selection-start-column="31" selection-end-line="422" selection-end-column="31" />
+            <state relative-caret-position="319">
+              <caret line="348" column="21" lean-forward="false" selection-start-line="348" selection-start-column="21" selection-end-line="348" selection-end-column="21" />
               <folding>
+                <element signature="e#386#399#0" expanded="true" />
                 <element signature="e#1277#2539#0" expanded="false" />
                 <element signature="e#2577#2858#0" expanded="false" />
                 <element signature="e#2894#3505#0" expanded="false" />
@@ -42,9 +43,9 @@
                 <element signature="e#7337#7970#0" expanded="false" />
                 <element signature="e#8011#8354#0" expanded="false" />
                 <element signature="e#9327#9382#0" expanded="false" />
-                <element signature="e#11812#11875#0" expanded="false" />
-                <element signature="e#12234#12973#0" expanded="false" />
-                <element signature="e#14395#14476#0" expanded="false" />
+                <element signature="e#11794#11857#0" expanded="false" />
+                <element signature="e#12216#12955#0" expanded="false" />
+                <element signature="e#14377#14458#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -668,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520837386558</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="change if to while to completely empty the data buffer every time">
+      <created>1520838166091</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1520838166091</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -713,7 +721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="shorten debug msg" />
     <MESSAGE value="keep shortening" />
     <MESSAGE value="diagnose is_corrupt" />
     <MESSAGE value="convert to str" />
@@ -738,7 +745,8 @@
     <MESSAGE value="constrain buffer duplication" />
     <MESSAGE value="add seq num check" />
     <MESSAGE value="improve doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve doc" />
+    <MESSAGE value="change if to while to completely empty the data buffer every time" />
+    <option name="LAST_COMMIT_MESSAGE" value="change if to while to completely empty the data buffer every time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -752,6 +760,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#386#399#0" expanded="true" />
             <element signature="e#1277#2539#0" expanded="false" />
             <element signature="e#2577#2858#0" expanded="false" />
             <element signature="e#2894#3505#0" expanded="false" />
@@ -765,9 +774,9 @@
             <element signature="e#7337#7970#0" expanded="false" />
             <element signature="e#8011#8354#0" expanded="false" />
             <element signature="e#9327#9382#0" expanded="false" />
-            <element signature="e#11812#11875#0" expanded="false" />
-            <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14395#14476#0" expanded="false" />
+            <element signature="e#11794#11857#0" expanded="false" />
+            <element signature="e#12216#12955#0" expanded="false" />
+            <element signature="e#14377#14458#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -803,6 +812,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#386#399#0" expanded="true" />
             <element signature="e#1277#2539#0" expanded="false" />
             <element signature="e#2577#2858#0" expanded="false" />
             <element signature="e#2894#3505#0" expanded="false" />
@@ -816,9 +826,9 @@
             <element signature="e#7337#7970#0" expanded="false" />
             <element signature="e#8011#8354#0" expanded="false" />
             <element signature="e#9327#9382#0" expanded="false" />
-            <element signature="e#11812#11875#0" expanded="false" />
-            <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14395#14476#0" expanded="false" />
+            <element signature="e#11794#11857#0" expanded="false" />
+            <element signature="e#12216#12955#0" expanded="false" />
+            <element signature="e#14377#14458#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -854,6 +864,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#386#399#0" expanded="true" />
             <element signature="e#1277#2539#0" expanded="false" />
             <element signature="e#2577#2858#0" expanded="false" />
             <element signature="e#2894#3505#0" expanded="false" />
@@ -867,9 +878,9 @@
             <element signature="e#7337#7970#0" expanded="false" />
             <element signature="e#8011#8354#0" expanded="false" />
             <element signature="e#9327#9382#0" expanded="false" />
-            <element signature="e#11812#11875#0" expanded="false" />
-            <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14395#14476#0" expanded="false" />
+            <element signature="e#11794#11857#0" expanded="false" />
+            <element signature="e#12216#12955#0" expanded="false" />
+            <element signature="e#14377#14458#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -902,9 +913,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="422" column="31" lean-forward="true" selection-start-line="422" selection-start-column="31" selection-end-line="422" selection-end-column="31" />
+        <state relative-caret-position="319">
+          <caret line="348" column="21" lean-forward="false" selection-start-line="348" selection-start-column="21" selection-end-line="348" selection-end-column="21" />
           <folding>
+            <element signature="e#386#399#0" expanded="true" />
             <element signature="e#1277#2539#0" expanded="false" />
             <element signature="e#2577#2858#0" expanded="false" />
             <element signature="e#2894#3505#0" expanded="false" />
@@ -918,9 +930,9 @@
             <element signature="e#7337#7970#0" expanded="false" />
             <element signature="e#8011#8354#0" expanded="false" />
             <element signature="e#9327#9382#0" expanded="false" />
-            <element signature="e#11812#11875#0" expanded="false" />
-            <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14395#14476#0" expanded="false" />
+            <element signature="e#11794#11857#0" expanded="false" />
+            <element signature="e#12216#12955#0" expanded="false" />
+            <element signature="e#14377#14458#0" expanded="false" />
           </folding>
         </state>
       </provider>

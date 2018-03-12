@@ -6,7 +6,7 @@ functions: rdt_network_init(), rdt_socket(), rdt_bind(), rdt_peer()
 
 Student name: ZHOU Jingran
 Student No. : 3035232468
-Date and version: 11 Mar - Version 2
+Date and version: 12 Mar - Version 3
 Development platform: Developed on macOS High Sierra (Version 10.13.3); Tested on Ubuntu 16.04 LTS
 Python version: Python 3.6.3
 """
@@ -346,7 +346,7 @@ def rdt_send(sockd, byte_msg):
                     __send_seq_num ^= 1  # Flip sequence number
                     return sent_len - HEADER_SIZE  # Return size of data sent (payload only)
                 # Received *complete* DATA while waiting for ACK
-                else:  # TODO: testing!
+                else:
                     print("rdt_send(): recv DATA ?! -buffer-> " + str(__unpack_helper(recv_msg)[0]))
                     if recv_msg not in __data_buffer:  # If not in buffer, add
                         __data_buffer.append(recv_msg)  # Buffer data...
