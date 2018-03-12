@@ -418,7 +418,7 @@ def rdt_recv(sockd, length):
 
     # Check if something in buffer
     if len(__data_buffer) > 0:
-        recv_pkt = __data_buffer.pop(0)  # Guaranteed to be NOT corrupt
+        recv_pkt = __data_buffer.pop(0)  # Guaranteed to be NOT corrupt, and already ACK-ed in rdt_send()
         print("rdt_recv(): <!> Something in buffer! -> " + str(__unpack_helper(recv_pkt)[0]))
         if __has_seq(recv_pkt, __recv_seq_num):  # Buffered data has expected seq num
             print("rdt_recv(): Received expected buffer DATA [%d] of size %d" % (__recv_seq_num, len(recv_pkt)))
@@ -444,7 +444,7 @@ def rdt_recv(sockd, length):
             __udt_send(sockd, __peeraddr, snd_ack)
             __last_ack_no = 1-__recv_seq_num
             print("rdt_recv(): Sent old ACK [%d]" % (1-__recv_seq_num))
-        # If received DATA with expected seq num, send ACK
+        # If received DATA with *expected* seq num, send ACK
         elif __has_seq(recv_pkt, __recv_seq_num):
             (_), payload = __unpack_helper(recv_pkt)  # Extract payload
             # print(("rdt_recv(): Received expected DATA [%d] -> " % __recv_seq_num) + str(payload))

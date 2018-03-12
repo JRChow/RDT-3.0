@@ -26,8 +26,8 @@
       <file leaf-file-name="rdt3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdt3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="423" column="55" lean-forward="false" selection-start-line="423" selection-start-column="55" selection-end-line="423" selection-end-column="55" />
+            <state relative-caret-position="421">
+              <caret line="420" column="105" lean-forward="false" selection-start-line="420" selection-start-column="105" selection-end-line="420" selection-end-column="105" />
               <folding>
                 <element signature="e#1277#2539#0" expanded="false" />
                 <element signature="e#2577#2858#0" expanded="false" />
@@ -44,7 +44,7 @@
                 <element signature="e#9327#9382#0" expanded="false" />
                 <element signature="e#11812#11875#0" expanded="false" />
                 <element signature="e#12234#12973#0" expanded="false" />
-                <element signature="e#14358#14439#0" expanded="false" />
+                <element signature="e#14392#14473#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -654,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520765059416</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="add seq num check">
+      <created>1520837295503</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1520837295503</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -699,7 +706,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rm long msg" />
     <MESSAGE value="seq num still need to be global..." />
     <MESSAGE value="shorten debug msg" />
     <MESSAGE value="keep shortening" />
@@ -724,7 +730,8 @@
     <MESSAGE value="add loop in close" />
     <MESSAGE value="add last_ack_no" />
     <MESSAGE value="constrain buffer duplication" />
-    <option name="LAST_COMMIT_MESSAGE" value="constrain buffer duplication" />
+    <MESSAGE value="add seq num check" />
+    <option name="LAST_COMMIT_MESSAGE" value="add seq num check" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -753,7 +760,7 @@
             <element signature="e#9327#9382#0" expanded="false" />
             <element signature="e#11812#11875#0" expanded="false" />
             <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14358#14439#0" expanded="false" />
+            <element signature="e#14392#14473#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -804,7 +811,7 @@
             <element signature="e#9327#9382#0" expanded="false" />
             <element signature="e#11812#11875#0" expanded="false" />
             <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14358#14439#0" expanded="false" />
+            <element signature="e#14392#14473#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -855,7 +862,7 @@
             <element signature="e#9327#9382#0" expanded="false" />
             <element signature="e#11812#11875#0" expanded="false" />
             <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14358#14439#0" expanded="false" />
+            <element signature="e#14392#14473#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,8 +895,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdt3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="423" column="55" lean-forward="false" selection-start-line="423" selection-start-column="55" selection-end-line="423" selection-end-column="55" />
+        <state relative-caret-position="421">
+          <caret line="420" column="105" lean-forward="false" selection-start-line="420" selection-start-column="105" selection-end-line="420" selection-end-column="105" />
           <folding>
             <element signature="e#1277#2539#0" expanded="false" />
             <element signature="e#2577#2858#0" expanded="false" />
@@ -906,7 +913,7 @@
             <element signature="e#9327#9382#0" expanded="false" />
             <element signature="e#11812#11875#0" expanded="false" />
             <element signature="e#12234#12973#0" expanded="false" />
-            <element signature="e#14358#14439#0" expanded="false" />
+            <element signature="e#14392#14473#0" expanded="false" />
           </folding>
         </state>
       </provider>
