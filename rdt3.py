@@ -199,14 +199,14 @@ def __make_data(seq_num, data):
     # Make initial message
     msg_format = struct.Struct(MSG_FORMAT)
     checksum = 0  # First set checksum to 0
-    init_msg = msg_format.pack(TYPE_DATA, seq_num, checksum, len(data)) + data
+    init_msg = msg_format.pack(TYPE_DATA, seq_num, checksum, socket.htons(len(data))) + data
 
     # Calculate checksum
     checksum = __int_chksum(bytearray(init_msg))
     # print("checksum = " + str(checksum))
 
     # A complete msg with checksum
-    complete_msg = msg_format.pack(TYPE_DATA, seq_num, checksum, len(data)) + data
+    complete_msg = msg_format.pack(TYPE_DATA, seq_num, checksum, socket.htons(len(data))) + data
     # print("__make_data() finished --> " + str(__unpack_helper(complete_msg)))
     return complete_msg
 
@@ -402,14 +402,14 @@ def __make_ack(seq_num):
     # Make initial message
     msg_format = struct.Struct(MSG_FORMAT)
     checksum = 0  # First set checksum to 0
-    init_msg = msg_format.pack(TYPE_ACK, seq_num, checksum, 0) + b''
+    init_msg = msg_format.pack(TYPE_ACK, seq_num, checksum, socket.htons(0)) + b''
 
     # Calculate checksum
     checksum = __int_chksum(bytearray(init_msg))
     # print("checksum = ", checksum)
 
     # A complete msg with checksum
-    return msg_format.pack(TYPE_ACK, seq_num, checksum, 0) + b''
+    return msg_format.pack(TYPE_ACK, seq_num, checksum, socket.htons(0)) + b''
 
 
 def rdt_recv(sockd, length):
