@@ -215,7 +215,8 @@ def __unpack_helper(msg):
     """Helper function to unpack msg."""
     global MSG_FORMAT
     size = struct.calcsize(MSG_FORMAT)
-    return struct.unpack(MSG_FORMAT, msg[:size]), msg[size:]
+    (msg_type, seq_num, recv_checksum, payload_len), payload = struct.unpack(MSG_FORMAT, msg[:size]), msg[size:]
+    return (msg_type, seq_num, recv_checksum, socket.ntohs(payload_len)), payload  # Byte order conversion
 
 
 def __is_corrupt(recv_pkt):
@@ -242,7 +243,7 @@ def __is_corrupt(recv_pkt):
     # print("           : received checksum = ", recv_checksum)
 
     # Reconstruct initial message
-    init_msg = struct.Struct(MSG_FORMAT).pack(msg_type, seq_num, 0, payload_len) + payload
+    init_msg = struct.Struct(MSG_FORMAT).pack(msg_type, seq_num, 0, socket.htons(payload_len)) + payload
 
     # Calculate checksum
     calc_checksum = __int_chksum(bytearray(init_msg))
